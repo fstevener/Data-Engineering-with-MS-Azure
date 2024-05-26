@@ -1,0 +1,57 @@
+IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseDelimitedTextFormat') 
+	CREATE EXTERNAL FILE FORMAT [SynapseDelimitedTextFormat] 
+	WITH ( FORMAT_TYPE = DELIMITEDTEXT ,
+	       FORMAT_OPTIONS (
+			 FIELD_TERMINATOR = ',',
+			 USE_TYPE_DEFAULT = FALSE
+			))
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'udacitydemo2_udacitydemo2_dfs_core_windows_net') 
+	CREATE EXTERNAL DATA SOURCE [udacitydemo2_udacitydemo2_dfs_core_windows_net] 
+	WITH (
+		LOCATION = 'abfss://udacitydemo2@udacitydemo2.dfs.core.windows.net' 
+	)
+GO
+
+CREATE EXTERNAL TABLE dbo.d_date (
+	[DateDimId] nvarchar(4000),
+	[DateActual] nvarchar(4000),
+	[Epoch] nvarchar(4000),
+	[DaySuffix] nvarchar(4000),
+	[DayName] nvarchar(4000),
+	[DayOfWeek] nvarchar(4000),
+	[DayOfMonth] nvarchar(4000),
+	[DayOfQuarter] nvarchar(4000),
+	[DayOfYear] nvarchar(4000),
+	[WeekOfMonth] nvarchar(4000),
+	[WeekOfYear] nvarchar(4000),
+	[WeekOfYearIso] nvarchar(4000),
+	[MonthActual] nvarchar(4000),
+	[MonthName] nvarchar(4000),
+	[MonthNameAbbreviated] nvarchar(4000),
+	[QuarterActual] nvarchar(4000),
+	[QuarterName] nvarchar(4000),
+	[YearActual] nvarchar(4000),
+	[FirstDayOfWeek] nvarchar(4000),
+	[LastDayOfWeek] nvarchar(4000),
+	[FirstDayOfMonth] nvarchar(4000),
+	[LastDayOfMonth] nvarchar(4000),
+	[FirstDayOfQuarter] nvarchar(4000),
+	[LastDayOfQuarter] nvarchar(4000),
+	[FirstDayOfYear] nvarchar(4000),
+	[LastDayOfYear] nvarchar(4000),
+	[mmyyy] nvarchar(4000),
+	[mmddyyy] nvarchar(4000),
+	[WeekendIndr] nvarchar(4000)
+	)
+	WITH (
+	LOCATION = 'publicd_date.txt',
+	DATA_SOURCE = [udacitydemo2_udacitydemo2_dfs_core_windows_net],
+	FILE_FORMAT = [SynapseDelimitedTextFormat]
+	)
+GO
+
+
+SELECT TOP 100 * FROM dbo.d_date
+GO

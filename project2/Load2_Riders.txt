@@ -1,0 +1,36 @@
+IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseDelimitedTextFormat') 
+	CREATE EXTERNAL FILE FORMAT [SynapseDelimitedTextFormat] 
+	WITH ( FORMAT_TYPE = DELIMITEDTEXT ,
+	       FORMAT_OPTIONS (
+			 FIELD_TERMINATOR = ',',
+			 USE_TYPE_DEFAULT = FALSE
+			))
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'udacitydemo2_udacitydemo2_dfs_core_windows_net') 
+	CREATE EXTERNAL DATA SOURCE [udacitydemo2_udacitydemo2_dfs_core_windows_net] 
+	WITH (
+		LOCATION = 'abfss://udacitydemo2@udacitydemo2.dfs.core.windows.net' 
+	)
+GO
+
+CREATE EXTERNAL TABLE dbo.riders (
+	[RiderId] nvarchar(4000),
+	[First] nvarchar(4000),
+	[Last] nvarchar(4000),
+	[Address] nvarchar(4000),
+	[Birthday] nvarchar(4000),
+	[AccountStartDate] nvarchar(4000),
+	[AccountEndDate] nvarchar(4000),
+	[Member] nvarchar(4000)
+	)
+	WITH (
+	LOCATION = 'publicrider.txt',
+	DATA_SOURCE = [udacitydemo2_udacitydemo2_dfs_core_windows_net],
+	FILE_FORMAT = [SynapseDelimitedTextFormat]
+	)
+GO
+
+
+SELECT TOP 100 * FROM dbo.riders
+GO
