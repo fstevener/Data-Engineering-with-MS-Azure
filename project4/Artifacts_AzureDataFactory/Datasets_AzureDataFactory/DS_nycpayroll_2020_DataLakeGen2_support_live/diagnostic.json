@@ -1,0 +1,24 @@
+{
+    "now": "2024-07-08T01:55:22.239Z",
+    "perfNow": 24707305.8,
+    "diagnosticCorrelation": "cbbd7ed4-54c5-4fb9-9056-8101fd4863d1",
+    "source": "DownloadSupportFiles",
+    "environment": {
+        "productName": "adf",
+        "buildVersion": "1.0.062124.5",
+        "environmentType": 3,
+        "resourceName": "udacitydemo2",
+        "resourceRegion": "eastus",
+        "resourceGroup": "ODL-DataEng-261891",
+        "subscriptionId": "e85c2d28-e9aa-4775-85de-521be630b9fa",
+        "sessionId": "vsICMjfjWOWELyGHBqHCjC",
+        "operationId": "",
+        "gitType": "live",
+        "loggingKey": "ec3c97f6-4d8e-41b7-a3a9-019fd0dbdeae"
+    },
+    "additionalInfo": {
+        "selectedResource": "DS_nycpayroll_2020_DataLakeGen2",
+        "selectedResourceType": "dataset",
+        "dataFlowSessionId": "c6a6ea35-8d0b-4227-baad-0ea0a757a077"
+    }
+}

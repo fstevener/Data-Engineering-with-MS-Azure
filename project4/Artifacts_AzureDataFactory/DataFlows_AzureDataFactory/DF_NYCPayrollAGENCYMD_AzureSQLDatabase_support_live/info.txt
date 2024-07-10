@@ -1,0 +1,7 @@
+selected resource name:		DF_NYCPayrollAGENCYMD_AzureSQLDatabase
+selected resource type:		dataset
+factory name:			udacitydemo2
+factory location:		eastus
+subscription id:		e85c2d28-e9aa-4775-85de-521be630b9fa
+data flow session id:		c6a6ea35-8d0b-4227-baad-0ea0a757a077
+time of download (UTC):		Mon, 08 Jul 2024 01:54:48 GMT

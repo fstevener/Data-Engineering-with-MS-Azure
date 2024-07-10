@@ -1,0 +1,24 @@
+{
+    "now": "2024-07-08T01:55:35.655Z",
+    "perfNow": 24720721.2,
+    "diagnosticCorrelation": "05fda70c-e440-4783-b6c5-b00774391967",
+    "source": "DownloadSupportFiles",
+    "environment": {
+        "productName": "adf",
+        "buildVersion": "1.0.062124.5",
+        "environmentType": 3,
+        "resourceName": "udacitydemo2",
+        "resourceRegion": "eastus",
+        "resourceGroup": "ODL-DataEng-261891",
+        "subscriptionId": "e85c2d28-e9aa-4775-85de-521be630b9fa",
+        "sessionId": "vsICMjfjWOWELyGHBqHCjC",
+        "operationId": "",
+        "gitType": "live",
+        "loggingKey": "ec3c97f6-4d8e-41b7-a3a9-019fd0dbdeae"
+    },
+    "additionalInfo": {
+        "selectedResource": "DS_NYCPayrollSummary_AzureSQLDatabase",
+        "selectedResourceType": "dataset",
+        "dataFlowSessionId": "c6a6ea35-8d0b-4227-baad-0ea0a757a077"
+    }
+}
